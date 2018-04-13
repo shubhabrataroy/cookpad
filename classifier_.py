@@ -20,22 +20,32 @@ batch_size = 32
 nb_classes = 2
 nb_epoch = 150
 
-datadir = "/home/shubhabrata/Desktop/CookPad"
+#datadir = "/home/shubhabrata/Desktop/CookPad"
+"""
 X_train = np.load(join(datadir, 'X_train.npy'))
 X_train_ = X_train.transpose((0, 3, 1, 2))
 X_test = np.load(join(datadir, 'X_test.npy'))
 X_test_ = X_test.transpose((0, 3, 1, 2))
 y_train = np.load(join(datadir, 'y_train.npy'))
 y_test = np.load(join(datadir, 'y_test.npy'))
+"""
+X_train = np.load('X_train.npy')
+X_train_ = X_train.transpose((0, 3, 1, 2))
+X_test = np.load('X_test.npy')
+X_test_ = X_test.transpose((0, 3, 1, 2))
+y_train = np.load('y_train.npy')
+y_test = np.load( 'y_test.npy')
 
 
 Y_train = np_utils.to_categorical(y_train, nb_classes)
 Y_test = np_utils.to_categorical(y_test, nb_classes)
 
+"""
 # print one sample image
 plt.imshow(X_train[2])
 
 plt.imshow(X_train[12])
+"""
 
 # Data pre-processing and augmentation:
 
@@ -117,7 +127,7 @@ print(classification_report(TrueLabels, PredictedLabels, target_names=target_nam
 
 print('Area under the curve (AUC) is:', roc_auc_score(TrueLabels, PredictedLabels))
 
-
+"""
 cm = confusion_matrix(PredictedLabels, TrueLabels)
 fig, ax = plt.subplots()
 im = ax.matshow(cm)
@@ -130,3 +140,4 @@ fig.colorbar(im)
 plt.ylabel('True label')
 plt.xlabel('Predicted label')
 plt.show()
+"""
