@@ -70,7 +70,7 @@ avg / total       0.72      0.68      0.67       266
 We see it is not a very high performing model, but it has been kept simple and lightweighted keeping processing power and time in mind. In a Nvidia Quatro 4000 system it takes around 2 minutes to train the data on the current settings.
 
 
-In order to deploy this model in production I would set up this script into preprocessing, training and testing to easily encapsiulate the required components for deployment. Then I would take my preprocessing, test, as well as weights file (saved weights as json or pickled format) and put them in one folder. Next, I will want to host this on a server and wrap an API server around this. We can use a Flask Restful API so that we can use query parameters as my inputs and output our response in standard JSON blobs.
+In order to deploy this model in production I would set up this script into preprocessing, training and testing to easily encapsiulate the required components for deployment. Then I would take my preprocessing, test, as well as weights file (saved weights as json or pickled format during training) and put them in one folder. Next, I will want to host this on a server and wrap an API server around this. We can use a Flask Restful API so that we can use query parameters as my inputs and output our response in standard JSON blobs.
 
 To host it on a server, we can deploy the Flask API on EC2.
 
